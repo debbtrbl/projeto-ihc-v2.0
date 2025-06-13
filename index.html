@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="assets/img/handshake.png"
+      type="image/x-icon"
+    />
+    <script src="assets/scripts/script.js" defer></script>
+
+    <title>ID Vagas - Cadastro</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-image">
+        <h2 class="logo-text">ID - Vagas</h2>
+        <img src="assets/img/undraw_interview_yz52.svg" alt="" />
+      </div>
+      <div class="form">
+        <form id="multiStepForm">
+          <div class="form-header">
+            <div class="title">
+              <h1>Cadastre-se</h1>
+            </div>
+            <div class="login-button">
+              <button><a href="login.html">Fazer login</a></button>
+            </div>
+          </div>
+
+          <!-- Step 1 -->
+          <div class="step active">
+            <div class="input-group">
+              <div class="input-box">
+                <label for="nome"
+                  >Nome completo <span class="required-star">*</span></label
+                >
+                <input
+                  type="text"
+                  id="nome"
+                  placeholder="Digite seu nome completo"
+                  required
+                  name="nome"
+                />
+              </div>
+              <div class="input-box">
+                <label for="dataNascimento"
+                  >Data de nascimento
+                  <span class="required-star">*</span></label
+                >
+                <input type="date" id="dataNascimento" name="dataNascimento" required/>
+              </div>
+              <div class="input-box">
+                <label for="genero"
+                  >Gênero <span class="required-star">*</span></label
+                >
+                <select name="genero" id="genero" required>
+                  <option value="">Selecione</option>
+                  <option value="feminino">Feminino</option>
+                  <option value="masculino">Masculino</option>
+                  <option value="nao_binario">Não-binário</option>
+                  <option value="outro">Outro</option>
+                  <option value="prefiro_nao_dizer">Prefiro não dizer</option>
+                </select>
+              </div>
+              <div class="input-box">
+                <label for="cpf"
+                  >CPF <span class="required-star">*</span></label
+                >
+                <input
+                  type="text"
+                  id="cpf"
+                  name="cpf"
+                  maxlength="11"
+                  pattern="[0-9]{11}"
+                  placeholder="Digite seu CPF (apenas números)"
+                  required
+                />
+              </div>
+              <div class="input-box">
+                <label for="cidade">Cidade</label>
+                <input
+                  type="text"
+                  name="cidade"
+                  id="cidade"
+                  placeholder="Digite sua cidade"
+                />
+              </div>
+              <div class="input-box">
+                <label for="estado">
+                  Estado <span class="required-star">*</span>
+                </label>
+                <select id="estado" name="estado" required>
+                  <option value="" disabled selected>
+                    Selecione seu estado
+                  </option>
+                  <option value="AC">Acre (AC)</option>
+                  <option value="AL">Alagoas (AL)</option>
+                  <option value="AP">Amapá (AP)</option>
+                  <option value="AM">Amazonas (AM)</option>
+                  <option value="BA">Bahia (BA)</option>
+                  <option value="CE">Ceará (CE)</option>
+                  <option value="DF">Distrito Federal (DF)</option>
+                  <option value="ES">Espírito Santo (ES)</option>
+                  <option value="GO">Goiás (GO)</option>
+                  <option value="MA">Maranhão (MA)</option>
+                  <option value="MT">Mato Grosso (MT)</option>
+                  <option value="MS">Mato Grosso do Sul (MS)</option>
+                  <option value="MG">Minas Gerais (MG)</option>
+                  <option value="PA">Pará (PA)</option>
+                  <option value="PB">Paraíba (PB)</option>
+                  <option value="PR">Paraná (PR)</option>
+                  <option value="PE">Pernambuco (PE)</option>
+                  <option value="PI">Piauí (PI)</option>
+                  <option value="RJ">Rio de Janeiro (RJ)</option>
+                  <option value="RN">Rio Grande do Norte (RN)</option>
+                  <option value="RS">Rio Grande do Sul (RS)</option>
+                  <option value="RO">Rondônia (RO)</option>
+                  <option value="RR">Roraima (RR)</option>
+                  <option value="SC">Santa Catarina (SC)</option>
+                  <option value="SP">São Paulo (SP)</option>
+                  <option value="SE">Sergipe (SE)</option>
+                  <option value="TO">Tocantins (TO)</option>
+                </select>
+              </div>
+            </div>
+            <div class="button-group">
+              <button type="button" onclick="nextStep()">Próximo</button>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step">
+            <div class="input-group">
+              <div class="input-box">
+                <label for="escolaridade" aria-required="true">
+                  Grau de Escolaridade
+                  <span class="required-star" title="Campo obrigatório">*</span>
+                </label>
+                <select id="escolaridade" name="escolaridade" required>
+                  <option value="" disabled selected>
+                    Selecione sua escolaridade
+                  </option>
+                  <option value="fundamental-incompleto">
+                    Fundamental incompleto
+                  </option>
+                  <option value="fundamental-completo">
+                    Fundamental completo
+                  </option>
+                  <option value="medio-incompleto">Médio incompleto</option>
+                  <option value="medio-completo">Médio completo</option>
+                  <option value="superior-incompleto">
+                    Superior incompleto
+                  </option>
+                  <option value="superior-completo">Superior completo</option>
+                  <option value="pos-graduacao">Pós-graduação</option>
+                  <option value="mestrado">Mestrado</option>
+                  <option value="doutorado">Doutorado</option>
+                  <option value="prefiro-nao-informar">
+                    Prefiro não informar
+                  </option>
+                </select>
+              </div>
+              <div class="input-box">
+                <label for="area-interesse">Área Profissional de interesse</label>
+                <select id="area-interesse" name="area-interesse">
+                  <option value="" selected>Selecione uma área</option>
+                  <option value="informatica">Informática</option>
+                  <option value="saude">Saúde</option>
+                  <option value="administracao">Administração</option>
+                  <option value="negocios">Negócios</option>
+                  <option value="comunicacao">Comunicação</option>
+                  <option value="vendas">Vendas</option>
+                  <option value="atendimento">Atendimento</option>
+                  <option value="logistica">Logística</option>
+                  <option value="educacao">Educação</option>
+                  <option value="servicos">Serviços Gerais</option>
+                  <option value="outros">Outros</option>
+                </select>
+              </div>
+              <div class="input-box">
+                <label for="possui_deficiencia">
+                  Você possui alguma deficiência?
+                  <span class="required-star" title="Campo obrigatório">*</span>
+                </label>
+                <select
+                  id="possui_deficiencia"
+                  name="possui_deficiencia"
+                  required
+                >
+                  <option value="" disabled selected>Selecione</option>
+                  <option value="nao">Não</option>
+                  <option value="sim_fisica">Sim, deficiência física</option>
+                  <option value="sim_visual">Sim, deficiência visual</option>
+                  <option value="sim_auditiva">
+                    Sim, deficiência auditiva
+                  </option>
+                  <option value="sim_intelectual">
+                    Sim, deficiência intelectual
+                  </option>
+                  <option value="sim_psicossocial">
+                    Sim, deficiência múltipla
+                  </option>
+                  <option value="prefiro_nao_dizer">Prefiro não dizer</option>
+                </select>
+              </div>
+
+              <div class="input-box" id="campo_concorrer_pcd">
+                <label for="concorrer_pcd">
+                  Concorrer a vagas para PCD?
+                  <span class="required-star" title="Campo obrigatório">*</span>
+                </label>
+                <select id="concorrer_pcd" name="concorrer_pcd" required>
+                  <option value="" disabled selected>Selecione</option>
+                  <option value="sim">Sim</option>
+                  <option value="nao">Não</option>
+                </select>
+              </div>
+
+              <div class="input-box">
+                <label for="linkedin">LinkedIn</label>
+                <input
+                  type="text"
+                  id="linkedin"
+                  name="linkedin"
+                  placeholder="https://www.linkedin.com/in/seu-perfil"
+                />
+              </div>
+
+              <div class="input-box">
+                <label
+                  >Idiomas (selecione um ou mais):
+                  <span class="required-star" title="Campo obrigatório"
+                    >*</span
+                  ></label
+                >
+                <div class="checkbox-group">
+                  <label
+                    ><input type="checkbox" name="idiomas" value="portugues" />
+                    Português</label
+                  >
+                  <label
+                    ><input type="checkbox" name="idiomas" value="ingles" />
+                    Inglês</label
+                  >
+                  <label
+                    ><input type="checkbox" name="idiomas" value="espanhol" />
+                    Espanhol</label
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="button-group">
+              <button type="button" onclick="prevStep()">Voltar</button>
+              <button type="button" onclick="nextStep()">Próximo</button>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="step">
+            <div class="input-group">
+              <div class="input-box">
+                <label for="celular"
+                  >Celular <span class="required-star">*</span></label
+                >
+                <input
+                  type="text"
+                  name="celular"
+                  id="celular"
+                  placeholder="(99) 99999-9999"
+                  required
+                />
+              </div>
+              <div class="input-box">
+                <label
+                  >Este número é WhatsApp?
+                  <span class="required-star">*</span></label
+                >
+
+                <div class="radio-group">
+                  <label>
+                    <input type="radio" name="whatsapp" value="sim" required />
+                    Sim
+                  </label>
+
+                  <label>
+                    <input type="radio" name="whatsapp" value="nao" />
+                    Não
+                  </label>
+                </div>
+              </div>
+
+              <div class="input-box">
+                <label for="email"
+                  >Email <span class="required-star">*</span></label
+                >
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  required
+                  placeholder="exemplo@seuemail.com"
+                />
+              </div>
+              <div class="input-box">
+                <label for="confirmar-email"
+                  >Confirmar Email <span class="required-star">*</span></label
+                >
+                <input
+                  type="email"
+                  name="confirmar-email"
+                  id="confirmar-email"
+                  placeholder="exemplo@seuemail.com"
+                  required
+                />
+              </div>
+              <div class="input-box">
+                <label for="senha"
+                  >Senha <span class="required-star">*</span></label
+                >
+                <input
+                  type="password"
+                  name="senha"
+                  id="senha"
+                  minlength="8"
+                  placeholder="Digite sua senha"
+                  required
+                />
+              </div>
+              <div class="input-box">
+                <label for="confirmar-senha"
+                  >Confirmar Senha <span class="required-star">*</span></label
+                >
+                <input
+                  type="password"
+                  name="confirmar-senha"
+                  id="confirmar-senha"
+                  minlength="8"
+                  placeholder="Confirme sua senha"
+                  required
+                />
+              </div>
+              <small class="senha-requisitos">
+                Pelo menos 8 caracteres, incluindo letra maiúscula, minúscula,
+                número e símbolo.
+              </small>
+              <div class="input-box" id="campo-termos">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="termos" id="termos" required />
+                  Aceito os
+                  <a
+                    href="termos.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >termos e condições</a
+                  >.
+                  <span class="required-star">*</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="button-group">
+              <button type="button" onclick="prevStep()">Voltar</button>
+              <button type="submit">Enviar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="popup" class="popup hidden">
+      <p id="popup-message"></p>
+    </div>
+  </body>
+</html>
