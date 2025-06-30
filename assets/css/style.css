@@ -195,6 +195,10 @@ body {
   margin-left: 1px;
 }
 
+.simbolos{
+    color: f44336;
+}
+
 .radio-group {
   display: flex;
   gap: 1rem; 
@@ -235,7 +239,7 @@ input[type="radio"] {
   }
 
   #linkedin::placeholder {
-  font-size: 0.7rem; /* ou por exemplo: 12px */
+  font-size: 0.7rem; 
 }
 
 .senha-requisitos {
